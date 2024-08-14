@@ -82,6 +82,7 @@ void Test1()
 /// Entry of the program
 int main()
 {
-    Test1();
+    // Test1();
+    std::cout << "Hello world!";
     return 0;
 }

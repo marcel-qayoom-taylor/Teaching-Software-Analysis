@@ -26,20 +26,58 @@
  // 
  */
 
-
 #include "Assignment-1.h"
 using namespace std;
+
 
 /// TODO: print each path once this method is called, and
 /// add each path as a string into std::set<std::string> paths
 /// Print the path in the format "START: 1->2->4->5->END", where -> indicate an edge connecting two node IDs
 void GraphTraversal::printPath(std::vector<const Node *> &path)
 {
+  std::string pathStr = "START: ";
 
+  for (int i = 0; i < path.size(); i++) {
+    pathStr.append(std::to_string(path[i]->getNodeID()));
+    pathStr.append("->");
+  }
+
+  pathStr.append("END");
+
+  std::cout << pathStr << "\n";
+
+  paths.insert(pathStr);
 };
+
+
 
 /// TODO: Implement your depth first search here to traverse each program path (once for any loop) from src to dst
 void GraphTraversal::DFS(set<const Node *> &visited, vector<const Node *> &path, const Node *src, const Node *dst)
 {
+  
+}
 
+int main()
+{
+    std::cout << "Hello world!\n";
+
+
+    GraphTraversal traversal;
+    std::vector<const Node *> path;
+
+    // Create test nodes
+    Node node1(1);
+    Node node2(2);
+    Node node3(3);
+
+    // Add nodes to path
+    path.push_back(&node1);
+    path.push_back(&node2);
+    path.push_back(&node3);
+
+    traversal.printPath(path);
+
+    // Test1();
+    
+    return 0;
 }
