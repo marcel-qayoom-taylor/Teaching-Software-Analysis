@@ -27,8 +27,9 @@
  */
 
 #include "Assignment-1.h"
-using namespace std;
+#include <assert.h>
 
+using namespace std;
 
 /// TODO: print each path once this method is called, and
 /// add each path as a string into std::set<std::string> paths
@@ -49,35 +50,31 @@ void GraphTraversal::printPath(std::vector<const Node *> &path)
   paths.insert(pathStr);
 };
 
-
-
 /// TODO: Implement your depth first search here to traverse each program path (once for any loop) from src to dst
 void GraphTraversal::DFS(set<const Node *> &visited, vector<const Node *> &path, const Node *src, const Node *dst)
 {
-  
-}
+  // Update visited and path with current src node
+  visited.insert(src);
+  path.push_back(src);
 
-int main()
-{
-    std::cout << "Hello world!\n";
+  // Check if reached destination
+  if (src->getNodeID() == dst->getNodeID()) {
+    printPath(path);
+    visited.erase(src);
+    path.pop_back();
+    return;
+  }
 
-
-    GraphTraversal traversal;
-    std::vector<const Node *> path;
-
-    // Create test nodes
-    Node node1(1);
-    Node node2(2);
-    Node node3(3);
-
-    // Add nodes to path
-    path.push_back(&node1);
-    path.push_back(&node2);
-    path.push_back(&node3);
-
-    traversal.printPath(path);
-
-    // Test1();
+  // Loop through current node's out edges and recursively perform DFS
+  for (const Edge * e : src->getOutEdges()) {
+    const Node *nextNode = e->getDst();
     
-    return 0;
+    // If value has not been visited perform DFS on next node
+    if (visited.find(nextNode) == visited.end()) {
+      DFS(visited, path, nextNode, dst);
+    }
+  }
+  
+  visited.erase(src);
+  path.pop_back();
 }
