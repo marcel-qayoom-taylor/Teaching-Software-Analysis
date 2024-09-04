@@ -67,8 +67,6 @@ all: HelloWorld/all
 all: CodeGraph/all
 all: Assignment-1/all
 all: Assignment-2/all
-all: Assignment-3/all
-all: Assignment-4/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,8 +74,6 @@ preinstall: HelloWorld/preinstall
 preinstall: CodeGraph/preinstall
 preinstall: Assignment-1/preinstall
 preinstall: Assignment-2/preinstall
-preinstall: Assignment-3/preinstall
-preinstall: Assignment-4/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -89,8 +85,6 @@ clean: HelloWorld/clean
 clean: CodeGraph/clean
 clean: Assignment-1/clean
 clean: Assignment-2/clean
-clean: Assignment-3/clean
-clean: Assignment-4/clean
 .PHONY : clean
 
 #=============================================================================
@@ -122,36 +116,6 @@ Assignment-2/preinstall:
 # Recursive "clean" directory target.
 Assignment-2/clean: Assignment-2/CMakeFiles/assign-2.dir/clean
 .PHONY : Assignment-2/clean
-
-#=============================================================================
-# Directory level rules for directory Assignment-3
-
-# Recursive "all" directory target.
-Assignment-3/all: Assignment-3/CMakeFiles/assign-3.dir/all
-.PHONY : Assignment-3/all
-
-# Recursive "preinstall" directory target.
-Assignment-3/preinstall:
-.PHONY : Assignment-3/preinstall
-
-# Recursive "clean" directory target.
-Assignment-3/clean: Assignment-3/CMakeFiles/assign-3.dir/clean
-.PHONY : Assignment-3/clean
-
-#=============================================================================
-# Directory level rules for directory Assignment-4
-
-# Recursive "all" directory target.
-Assignment-4/all: Assignment-4/CMakeFiles/assign-4.dir/all
-.PHONY : Assignment-4/all
-
-# Recursive "preinstall" directory target.
-Assignment-4/preinstall:
-.PHONY : Assignment-4/preinstall
-
-# Recursive "clean" directory target.
-Assignment-4/clean: Assignment-4/CMakeFiles/assign-4.dir/clean
-.PHONY : Assignment-4/clean
 
 #=============================================================================
 # Directory level rules for directory CodeGraph
@@ -294,7 +258,7 @@ CMakeFiles/RISCVTargetParserTableGen.dir/clean:
 HelloWorld/CMakeFiles/hello.dir/all:
 	$(MAKE) $(MAKESILENT) -f HelloWorld/CMakeFiles/hello.dir/build.make HelloWorld/CMakeFiles/hello.dir/depend
 	$(MAKE) $(MAKESILENT) -f HelloWorld/CMakeFiles/hello.dir/build.make HelloWorld/CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/SVF-tools/Teaching-Software-Analysis/CMakeFiles --progress-num=17,18 "Built target hello"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/SVF-tools/Teaching-Software-Analysis/CMakeFiles --progress-num=9,10 "Built target hello"
 .PHONY : HelloWorld/CMakeFiles/hello.dir/all
 
 # Build rule for subdir invocation for target.
@@ -320,7 +284,7 @@ HelloWorld/CMakeFiles/hello.dir/clean:
 CodeGraph/CMakeFiles/codegraph.dir/all:
 	$(MAKE) $(MAKESILENT) -f CodeGraph/CMakeFiles/codegraph.dir/build.make CodeGraph/CMakeFiles/codegraph.dir/depend
 	$(MAKE) $(MAKESILENT) -f CodeGraph/CMakeFiles/codegraph.dir/build.make CodeGraph/CMakeFiles/codegraph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/SVF-tools/Teaching-Software-Analysis/CMakeFiles --progress-num=15,16 "Built target codegraph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/SVF-tools/Teaching-Software-Analysis/CMakeFiles --progress-num=7,8 "Built target codegraph"
 .PHONY : CodeGraph/CMakeFiles/codegraph.dir/all
 
 # Build rule for subdir invocation for target.
@@ -390,58 +354,6 @@ assign-2: Assignment-2/CMakeFiles/assign-2.dir/rule
 Assignment-2/CMakeFiles/assign-2.dir/clean:
 	$(MAKE) $(MAKESILENT) -f Assignment-2/CMakeFiles/assign-2.dir/build.make Assignment-2/CMakeFiles/assign-2.dir/clean
 .PHONY : Assignment-2/CMakeFiles/assign-2.dir/clean
-
-#=============================================================================
-# Target rules for target Assignment-3/CMakeFiles/assign-3.dir
-
-# All Build rule for target.
-Assignment-3/CMakeFiles/assign-3.dir/all:
-	$(MAKE) $(MAKESILENT) -f Assignment-3/CMakeFiles/assign-3.dir/build.make Assignment-3/CMakeFiles/assign-3.dir/depend
-	$(MAKE) $(MAKESILENT) -f Assignment-3/CMakeFiles/assign-3.dir/build.make Assignment-3/CMakeFiles/assign-3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/SVF-tools/Teaching-Software-Analysis/CMakeFiles --progress-num=7,8,9 "Built target assign-3"
-.PHONY : Assignment-3/CMakeFiles/assign-3.dir/all
-
-# Build rule for subdir invocation for target.
-Assignment-3/CMakeFiles/assign-3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/SVF-tools/Teaching-Software-Analysis/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Assignment-3/CMakeFiles/assign-3.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/SVF-tools/Teaching-Software-Analysis/CMakeFiles 0
-.PHONY : Assignment-3/CMakeFiles/assign-3.dir/rule
-
-# Convenience name for target.
-assign-3: Assignment-3/CMakeFiles/assign-3.dir/rule
-.PHONY : assign-3
-
-# clean rule for target.
-Assignment-3/CMakeFiles/assign-3.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Assignment-3/CMakeFiles/assign-3.dir/build.make Assignment-3/CMakeFiles/assign-3.dir/clean
-.PHONY : Assignment-3/CMakeFiles/assign-3.dir/clean
-
-#=============================================================================
-# Target rules for target Assignment-4/CMakeFiles/assign-4.dir
-
-# All Build rule for target.
-Assignment-4/CMakeFiles/assign-4.dir/all:
-	$(MAKE) $(MAKESILENT) -f Assignment-4/CMakeFiles/assign-4.dir/build.make Assignment-4/CMakeFiles/assign-4.dir/depend
-	$(MAKE) $(MAKESILENT) -f Assignment-4/CMakeFiles/assign-4.dir/build.make Assignment-4/CMakeFiles/assign-4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/SVF-tools/Teaching-Software-Analysis/CMakeFiles --progress-num=10,11,12,13,14 "Built target assign-4"
-.PHONY : Assignment-4/CMakeFiles/assign-4.dir/all
-
-# Build rule for subdir invocation for target.
-Assignment-4/CMakeFiles/assign-4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/SVF-tools/Teaching-Software-Analysis/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Assignment-4/CMakeFiles/assign-4.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/SVF-tools/Teaching-Software-Analysis/CMakeFiles 0
-.PHONY : Assignment-4/CMakeFiles/assign-4.dir/rule
-
-# Convenience name for target.
-assign-4: Assignment-4/CMakeFiles/assign-4.dir/rule
-.PHONY : assign-4
-
-# clean rule for target.
-Assignment-4/CMakeFiles/assign-4.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Assignment-4/CMakeFiles/assign-4.dir/build.make Assignment-4/CMakeFiles/assign-4.dir/clean
-.PHONY : Assignment-4/CMakeFiles/assign-4.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

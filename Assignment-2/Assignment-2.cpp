@@ -35,8 +35,22 @@ using namespace std;
 /// add each path as a string into std::set<std::string> paths
 /// Print the path in the format "START->1->2->4->5->END", where -> indicate an ICFGEdge connects two ICFGNode IDs
 
+// NEEDS TESTING
 void ICFGTraversal::collectICFGPath(std::vector<unsigned> &path){
+  // Initialise string
+  string pathStr = "Start: ";
 
+  for (int i = 0; i < path.size(); i++) {
+    pathStr.append(to_string(path[i]));
+    pathStr.append("->");
+  }
+
+  // print path
+  pathStr.append("END");
+  cout << pathStr << "\n";
+
+  // Add string to paths 
+  paths.insert(pathStr);
 }
 
 
@@ -45,4 +59,9 @@ void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst)
 {
 
 
+}
+
+int main() {
+  cout << "TESTING MAIN!\n";
+  return 0;
 }

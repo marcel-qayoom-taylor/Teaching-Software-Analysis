@@ -21,8 +21,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/SVF-tools/SVF/llvm-16.0.0.obj/lib/cmake/llvm/LLVMProcessSources.cmake"
   "Assignment-1/CMakeLists.txt"
   "Assignment-2/CMakeLists.txt"
-  "Assignment-3/CMakeLists.txt"
-  "Assignment-4/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
@@ -72,8 +70,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CodeGraph/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Assignment-1/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Assignment-2/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Assignment-3/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Assignment-4/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -86,6 +82,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "CodeGraph/CMakeFiles/codegraph.dir/DependInfo.cmake"
   "Assignment-1/CMakeFiles/assign-1.dir/DependInfo.cmake"
   "Assignment-2/CMakeFiles/assign-2.dir/DependInfo.cmake"
-  "Assignment-3/CMakeFiles/assign-3.dir/DependInfo.cmake"
-  "Assignment-4/CMakeFiles/assign-4.dir/DependInfo.cmake"
   )

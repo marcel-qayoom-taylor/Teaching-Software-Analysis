@@ -220,32 +220,6 @@ assign-2/fast:
 	$(MAKE) $(MAKESILENT) -f Assignment-2/CMakeFiles/assign-2.dir/build.make Assignment-2/CMakeFiles/assign-2.dir/build
 .PHONY : assign-2/fast
 
-#=============================================================================
-# Target rules for targets named assign-3
-
-# Build rule for target.
-assign-3: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 assign-3
-.PHONY : assign-3
-
-# fast build rule for target.
-assign-3/fast:
-	$(MAKE) $(MAKESILENT) -f Assignment-3/CMakeFiles/assign-3.dir/build.make Assignment-3/CMakeFiles/assign-3.dir/build
-.PHONY : assign-3/fast
-
-#=============================================================================
-# Target rules for targets named assign-4
-
-# Build rule for target.
-assign-4: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 assign-4
-.PHONY : assign-4
-
-# fast build rule for target.
-assign-4/fast:
-	$(MAKE) $(MAKESILENT) -f Assignment-4/CMakeFiles/assign-4.dir/build.make Assignment-4/CMakeFiles/assign-4.dir/build
-.PHONY : assign-4/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -260,8 +234,6 @@ help:
 	@echo "... omp_gen"
 	@echo "... assign-1"
 	@echo "... assign-2"
-	@echo "... assign-3"
-	@echo "... assign-4"
 	@echo "... codegraph"
 	@echo "... hello"
 .PHONY : help

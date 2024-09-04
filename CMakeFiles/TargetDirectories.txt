@@ -16,9 +16,3 @@
 /home/SVF-tools/Teaching-Software-Analysis/Assignment-2/CMakeFiles/assign-2.dir
 /home/SVF-tools/Teaching-Software-Analysis/Assignment-2/CMakeFiles/edit_cache.dir
 /home/SVF-tools/Teaching-Software-Analysis/Assignment-2/CMakeFiles/rebuild_cache.dir
-/home/SVF-tools/Teaching-Software-Analysis/Assignment-3/CMakeFiles/assign-3.dir
-/home/SVF-tools/Teaching-Software-Analysis/Assignment-3/CMakeFiles/edit_cache.dir
-/home/SVF-tools/Teaching-Software-Analysis/Assignment-3/CMakeFiles/rebuild_cache.dir
-/home/SVF-tools/Teaching-Software-Analysis/Assignment-4/CMakeFiles/assign-4.dir
-/home/SVF-tools/Teaching-Software-Analysis/Assignment-4/CMakeFiles/edit_cache.dir
-/home/SVF-tools/Teaching-Software-Analysis/Assignment-4/CMakeFiles/rebuild_cache.dir
