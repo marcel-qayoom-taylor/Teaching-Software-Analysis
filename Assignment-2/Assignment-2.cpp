@@ -53,15 +53,33 @@ void ICFGTraversal::collectICFGPath(std::vector<unsigned> &path){
   paths.insert(pathStr);
 }
 
-
 /// TODO: Implement your context-sensitive ICFG traversal here to traverse each program path (once for any loop) from src to dst
 void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst)
 {
-
+  
 
 }
 
+// int testPrint() {
+//       // Test case 1: Empty path
+//     vector<unsigned> path1 = {};
+//     collectICFGPathTest(path1);
+//     // Expected output: "Start: END"
+
+//     // Test case 2: Single node path
+//     vector<unsigned> path2 = {1};
+//     collectICFGPathTest(path2);
+//     // Expected output: "Start: 1->END"
+
+//       // Test case 3: Multiple node path
+//     vector<unsigned> path3 = {1, 2, 3, 4};
+//     collectICFGPathTest(path3);
+//     // Expected output: "Start: 1->2->3->4->END"
+// }
+
 int main() {
-  cout << "TESTING MAIN!\n";
+    cout << "TESTING MAIN!\n";
+
+
   return 0;
 }
