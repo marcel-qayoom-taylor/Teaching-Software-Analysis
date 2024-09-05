@@ -35,17 +35,17 @@ using namespace std;
 /// add each path as a string into std::set<std::string> paths
 /// Print the path in the format "START->1->2->4->5->END", where -> indicate an ICFGEdge connects two ICFGNode IDs
 
-// NEEDS TESTING
 void ICFGTraversal::collectICFGPath(std::vector<unsigned> &path){
   // Initialise string
   string pathStr = "Start: ";
 
+  // Iterate through path vector and build the path string
   for (int i = 0; i < path.size(); i++) {
     pathStr.append(to_string(path[i]));
     pathStr.append("->");
   }
 
-  // print path
+  // Complete string and print it
   pathStr.append("END");
   cout << pathStr << "\n";
 
@@ -56,30 +56,48 @@ void ICFGTraversal::collectICFGPath(std::vector<unsigned> &path){
 /// TODO: Implement your context-sensitive ICFG traversal here to traverse each program path (once for any loop) from src to dst
 void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst)
 {
+  pair<const ICFGNode*, CallStack> pair = make_pair(src, callstack);
+
+  // If the src node has already been visited
+  if (visited.find(pair) != visited.end()) {
+    return;
+  }
+
+  visited.insert(pair);
   
+  path.push_back(src->getId());
 
-}
+  // We've reached the sink and therefore end of one path
+  if (src == dst) {
+    collectICFGPath(path);
+  }
 
-// int testPrint() {
-//       // Test case 1: Empty path
-//     vector<unsigned> path1 = {};
-//     collectICFGPathTest(path1);
-//     // Expected output: "Start: END"
+  // Iterate through all outgoing edges of the current node
+  for (const ICFGEdge * edge : src->getOutEdges()) {
+    if (edge->isIntraCFGEdge()) {
+      // For intra-procedural edges, continue
+      reachability(edge->getDstNode(), dst);
+    }
+    else if (edge->isCallCFGEdge()) {
+      // For call edge push the call node onto stack before traversing
+      callstack.push_back(edge->getSrcNode());
+      reachability(edge->getDstNode(), dst);
+      callstack.pop_back();
+    }
+    else if (const SVF::RetICFGNode* retNode = SVFUtil::dyn_cast<SVF::RetICFGNode>(edge->getDstNode())) {
+      // If the return node matches the top of the call stack then remove it and continue
+      if (!callstack.empty() && callstack.back() == retNode->getCallICFGNode()) {
+        callstack.pop_back();
+        reachability(edge->getDstNode(), dst);
+        callstack.push_back(retNode->getCallICFGNode());
+      } else if (callstack.empty()) {
+        // If the call stack is empty then treat it as a normal edge
+        reachability(edge->getDstNode(), dst);
+      }
+    }
+  }
 
-//     // Test case 2: Single node path
-//     vector<unsigned> path2 = {1};
-//     collectICFGPathTest(path2);
-//     // Expected output: "Start: 1->END"
+  visited.erase(pair);
 
-//       // Test case 3: Multiple node path
-//     vector<unsigned> path3 = {1, 2, 3, 4};
-//     collectICFGPathTest(path3);
-//     // Expected output: "Start: 1->2->3->4->END"
-// }
-
-int main() {
-    cout << "TESTING MAIN!\n";
-
-
-  return 0;
+  path.pop_back();
 }
