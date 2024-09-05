@@ -54,8 +54,7 @@ void ICFGTraversal::collectICFGPath(std::vector<unsigned> &path){
 }
 
 /// TODO: Implement your context-sensitive ICFG traversal here to traverse each program path (once for any loop) from src to dst
-void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst)
-{
+void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst){
   pair<const ICFGNode*, CallStack> pair = make_pair(src, callstack);
 
   // If the src node has already been visited
